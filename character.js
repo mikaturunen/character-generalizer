@@ -1,19 +1,42 @@
 "use strict";
 
-var random = require("node-random");
-var Q = require("q");
+// Requiring set of json files
 var occupation = require("./assets/occupation.json");
 var education = require("./assets/education.json");
 var firstNames = require("./assets/first-names.json");
 var lastNames = require("./assets/last-names.json");
+var packageInformation = require("./package.json");
 
+// Requiring separate JS modules
+var randomOrg = require("node-random");
+var randomJs = require("random-js");
+var Q = require("q");
+var argumentsParser = require("arg-parser");
+
+// Setting up some silly default values
 var minimumAge = 16;
 var maximumAge = 60;
 var male = 0;
 var female = 1;
+var isOffline = true;
 
-console.log("Querying random.org for randomized information.. ");
-console.log("Stay a while and listen~");
+// Creating script specific parser
+var args = new argumentsParser(
+        packageInformation.name, 
+        packageInformation.version, 
+        packageInformation.description,
+        "Currently loosely creates million alternatives for your Cthulhu specific character - silly little thing :)"
+    );
+ 
+args.add({ name: "online", desc: "uses random.org for random generation.", switches: [ "-o", "--online"] });
+
+if (!args.parse()) {
+    // User ran the script with -h
+    return;
+    
+} else {
+   isOffline = args.params.online === true ? false : true;
+}
 
 // Wait for all the async queries to complete and then show the results. We do
 // a trick of calling all the async functions instantly and then reading the
@@ -25,7 +48,7 @@ createCharacterStub()
     .then(randomizeName)
     .then(randomizeEducation)
     .then(randomizeOccupation)
-    .then(character => console.log("Done:", character))
+    .then(character => console.log(character))
     .catch(error => console.log("ERROR:", error))
     .done();
 
@@ -45,7 +68,7 @@ function createCharacterStub() {
 function randomizeAge(character) {
     var deferred = Q.defer();
 
-    Q.ninvoke(random, "integers", { number: 1, minimum: minimumAge, maximum: maximumAge })
+    random(minimumAge, maximumAge)
         .done(result => {
             character.age = result;
             deferred.resolve(character);
@@ -57,7 +80,7 @@ function randomizeAge(character) {
 function randomizeGender(character) {
     var deferred = Q.defer();
 
-    Q.ninvoke(random, "integers", { number: 1, minimum: minimumAge, maximum: maximumAge })
+    random(0, 1)
         .done(result => {
             character.gender = result === 0 ? "male" : "female";
             deferred.resolve(character);
@@ -71,8 +94,8 @@ function randomizeName(character) {
 
     var listOfFirstNames = character.gender === "male" ? firstNames.male : firstNames.female;
     Q.all([
-            Q.ninvoke(random, "integers", { number: 1, minimum: 0, maximum: listOfFirstNames.length - 1 }),
-            Q.ninvoke(random, "integers", { number: 1, minimum: 0, maximum: lastNames.length - 1 })
+            random(0, listOfFirstNames.length - 1),
+            random(0, lastNames.length - 1)
         ])
         .done(results => {
             character.firstName = listOfFirstNames[results[0]];
@@ -86,7 +109,7 @@ function randomizeName(character) {
 function randomizeEducation(character) {
     var deferred = Q.defer();
 
-    Q.ninvoke(random, "integers", { number: 1, minimum: 0, maximum: education.length - 1 })
+    random(0, education.length - 1)
         .done(result => {
             character.education = education[result];
             deferred.resolve(character);
@@ -98,7 +121,7 @@ function randomizeEducation(character) {
 function randomizeOccupation(character) {
     var deferred = Q.defer();
 
-    Q.ninvoke(random, "integers", { number: 1, minimum: 0, maximum: occupation.length - 1 })
+    random(0, occupation.length - 1)
         .done(result => {
             character.occupation = occupation[result];
             deferred.resolve(character);
@@ -126,3 +149,29 @@ function displayResults(results) {
 
     console.log(results);
 };
+
+/** 
+ * Generates a single random number. Based on provided arguments, either uses offline or online randomization.
+ * @param {number} min Minimum number
+ * @param {number} max Maximum number 
+ * @returns {Q.Promise<number>} On success resolves to a single number
+ */
+function random(min, max) {
+    var deferred = Q.defer();
+
+    if (isOffline) {
+        // Use random-js, wrap non sync behavior into a async promise wrapper
+        // Create a Mersenne Twister-19937 that is auto-seeded based on time and other random values
+        var engine = randomJs.engines.mt19937().autoSeed();
+        // Create a distribution that will consistently produce integers within inclusive range [min, max].
+        var distribution = randomJs.integer(min, max);
+        deferred.resolve(distribution(engine));
+    } else {
+        console.log("Querying random.org..");
+        // Online, use random.org :) -- async
+        Q.ninvoke(randomOrg, "integers", { number: 1, minimum: min, maximum: max })
+            .done(deferred.resolve, deferred.reject)
+    }
+
+    return deferred.promise;
+}

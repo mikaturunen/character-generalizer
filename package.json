@@ -16,7 +16,9 @@
   "author": "Mika Turunen <mika.turunen@ymail.com>",
   "license": "MIT",
   "dependencies": {
+    "arg-parser": "^1.1.0",
     "node-random": "^1.0.0",
-    "q": "^1.1.2"
+    "q": "^1.1.2",
+    "random-js": "^1.0.4"
   }
 }
