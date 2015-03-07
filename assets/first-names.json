@@ -1,5 +1,5 @@
 {
-    "males": [
+    "male": [
         "Robert",
         "John",
         "James",
@@ -1001,7 +1001,7 @@
         "Marco",
         "Vergil"
     ],
-    "females": [
+    "female": [
         "Mary",
         "Dorothy",
         "Helen",
