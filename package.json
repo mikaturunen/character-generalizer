@@ -1,0 +1,22 @@
+{
+  "name": "character-generalizer",
+  "version": "0.0.1",
+  "description": "A character creator for all those lovely generalized needs - mainly cthulhu for now :)",
+  "main": "character.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "character",
+    "cthulhu",
+    "random",
+    "new",
+    "generalized"
+  ],
+  "author": "Mika Turunen <mika.turunen@ymail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "node-random": "^1.0.0",
+    "q": "^1.1.2"
+  }
+}
