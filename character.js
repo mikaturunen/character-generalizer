@@ -1,5 +1,7 @@
 "use strict";
 
+var _ = require("lodash");
+
 // Requiring set of json files
 var occupation = require("./assets/occupation.json");
 var education = require("./assets/education.json");
@@ -19,6 +21,10 @@ var maximumAge = 60;
 var male = 0;
 var female = 1;
 var isOffline = true;
+var sexualOrientation = [ ]
+    .concat(repeatValue("homosexual", 2))
+    .concat(repeatValues("bisexual", 3))
+    .concat(repeatValues("heterosexual", 95));
 
 // Creating script specific parser
 var args = new argumentsParser(
@@ -45,6 +51,7 @@ if (!args.parse()) {
 createCharacterStub()
     .then(randomizeAge)
     .then(randomizeGender)
+    .then(randomizeSexualOrientation)
     .then(randomizeName)
     .then(randomizeEducation)
     .then(randomizeOccupation)
@@ -58,6 +65,7 @@ function createCharacterStub() {
     deferred.resolve({ 
         age: 0, 
         gender: "", 
+        sexualOrientation: ""
         firstName: "", 
         lastName: "", 
         occupation: "" 
@@ -87,6 +95,18 @@ function randomizeGender(character) {
         }, deferred.reject);
 
     return deferred.promise;
+}
+
+function randomizeSexualOrientation() {
+    var deferred = Q.defer();
+
+    // Random number between 0 - 100, shuffle the sexual orientations array (shuffling sexual orientation.. wtf? :D) 
+    // and then single orientation with randomized index :)
+    random(0, 100).done(result => 
+        deferred.resolve(_.shuffle(sexualOrientation)[result]), 
+        deferred.reject);
+
+    return deferrer.promise;
 }
 
 function randomizeName(character) {
@@ -149,6 +169,16 @@ function displayResults(results) {
 
     console.log(results);
 };
+
+function repeatValue(value, count) {
+    var array = [ ];
+
+    for(var i=0; i<count; i++) {
+        array.push(value);
+    }
+
+    return array;
+}
 
 /** 
  * Generates a single random number. Based on provided arguments, either uses offline or online randomization.

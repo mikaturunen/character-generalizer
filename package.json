@@ -17,6 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "arg-parser": "^1.1.0",
+    "lodash": "^3.5.0",
     "node-random": "^1.0.0",
     "q": "^1.1.2",
     "random-js": "^1.0.4"
