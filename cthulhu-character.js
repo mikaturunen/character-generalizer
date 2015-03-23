@@ -2,10 +2,6 @@
 
 
 // Requiring set of json files
-var occupation = require("./assets/occupation.json");
-var education = require("./assets/education.json");
-var firstNames = require("./assets/first-names.json");
-var lastNames = require("./assets/last-names.json");
 var packageInformation = require("./package.json");
 
 var rules = require("./rules");
@@ -15,8 +11,6 @@ var character = require("./character");
 
 var Q = require("q");
 var argumentsParser = require("arg-parser");
-
-var isOffline = true;
 
 // Creating script specific parser
 var args = new argumentsParser(
@@ -33,11 +27,11 @@ if (!args.parse()) {
     return;
     
 } else {
-   isOffline = args.params.online === true ? false : true;
+   random.isOffline = args.params.online === true ? false : true;
 }
 
 character
-    .create();
+    .create()
     .done(displayResults, error => console.log("ERROR: ", error));
 
 /**

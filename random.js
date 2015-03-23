@@ -1,5 +1,5 @@
 
-var Q = requier("q");
+var Q = require("q");
 var randomOrg = require("node-random");
 var randomJs = require("random-js");
 
@@ -12,7 +12,7 @@ var randomJs = require("random-js");
 function random(min, max) {
     var deferred = Q.defer();
 
-    if (isOffline) {
+    if (random.isOffline) {
         // Use random-js, wrap non sync behavior into a async promise wrapper
         // Create a Mersenne Twister-19937 that is auto-seeded based on time and other random values
         var engine = randomJs.engines.mt19937().autoSeed();
@@ -28,5 +28,6 @@ function random(min, max) {
 
     return deferred.promise;
 }
+random.isOffline = true;
 
 module.exports = random;

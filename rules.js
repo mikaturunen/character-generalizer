@@ -43,7 +43,7 @@ Know = Edu*5
  * @param  {number} count How many repeats for array
  * @return {Array<T>} Returns an array of objects repeated for count times.  
  */
-function repeatValue(value, count) {
+function repeatValues(value, count) {
     var array = [ ];
 
     for(var i=0; i<count; i++) {
@@ -86,9 +86,9 @@ var rules = {
      * @type {string[]}
      */
     sexualOrientations: _.shuffle([ ]
-        .concat(repeatValue("homosexual", 2))
+        .concat(repeatValues("homosexual", 2))
         .concat(repeatValues("bisexual", 3))
         .concat(repeatValues("heterosexual", 95)))
 };
 
-module.exports = dice;
+module.exports = rules;
