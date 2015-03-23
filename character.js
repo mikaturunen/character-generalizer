@@ -1,76 +1,26 @@
-"use strict";
-
-var _ = require("lodash");
-
-// Requiring set of json files
-var occupation = require("./assets/occupation.json");
-var education = require("./assets/education.json");
-var firstNames = require("./assets/first-names.json");
-var lastNames = require("./assets/last-names.json");
-var packageInformation = require("./package.json");
 
 var Q = require("q");
-var argumentsParser = require("arg-parser");
+var rules = require("./rules");
+var die = require("./die");
+var random = require("./random");
 
-// Setting up some silly default values
-var minimumAge = 16;
-var maximumAge = 60;
-var male = 0;
-var female = 1;
-var isOffline = true;
-var sexualOrientation = [ ]
-    .concat(repeatValue("homosexual", 2))
-    .concat(repeatValues("bisexual", 3))
-    .concat(repeatValues("heterosexual", 95));
-
-// 1d40
-var ageModifierDie = random(1, 41);
-
-// Creating script specific parser
-var args = new argumentsParser(
-        packageInformation.name, 
-        packageInformation.version, 
-        packageInformation.description,
-        "Currently loosely creates million alternatives for your Cthulhu specific character - silly little thing :)"
-    );
- 
-args.add({ name: "online", desc: "uses random.org for random generation.", switches: [ "-o", "--online"] });
-
-if (!args.parse()) {
-    // User ran the script with -h
-    return;
-    
-} else {
-   isOffline = args.params.online === true ? false : true;
-}
-
-// Wait for all the async queries to complete and then show the results. We do
-// a trick of calling all the async functions instantly and then reading the
-// results with indices from the final result, not the most clean solution
-// but works for now :)
-createCharacterStub()
-    .then(randomizeAge)
-    .then(randomizeGender)
-    .then(randomizeSexualOrientation)
-    .then(randomizeStats)
-    .then(randomizeName)
-    .then(randomizeEducation)
-    .then(randomizeOccupation)
-    .then(character => console.log(character))
-    .catch(error => console.log("ERROR:", error))
-    .done();
-
-function createCharacterStub() {
-    // NOTE: not async function but we use it like it was one to make the promise chain a lot more readable :)
+function createStub() {
+    // NOTE not async function, just easier to handle the promise chain this way
     var deferred = Q.defer();
+
     deferred.resolve({ 
         age: 0, 
         gender: "", 
         sexualOrientation: ""
         firstName: "", 
         lastName: "", 
-        occupation: "" 
+        occupation: "",
+        education: "",
+        stats: {
+
+        }
     });
+
     return deferred.promise;
 }
 
@@ -157,36 +107,28 @@ function randomizeOccupation(character) {
     return deferred.promise;
 }
 
-/**
- * Used to transform the given amount of data into specific set of results.
- * @param {Object[]} results List of results from all the async queries into
- * random.org. Accessed with documented indices.
- * @returns {Object}
- */
-function transformResults(results) {
 
-};
 
-/**
- * Used to display the results.
- * @param {Object[]} results List of results.
- */
-function displayResults(results) {
-    var transformedResults = transformResults(results);
+var character = {
+    create: () {
+        var deferred = Q.defer();
 
-    console.log(results);
-};
-
-function repeatValue(value, count) {
-    var array = [ ];
-
-    for(var i=0; i<count; i++) {
-        array.push(value);
+        // Wait for all the async queries to complete and then show the results. We do
+        // a trick of calling all the async functions instantly and then reading the
+        // results with indices from the final result, not the most clean solution
+        // but works for now :)
+        createStub()
+            .then(randomizeAge)
+            .then(randomizeGender)
+            .then(randomizeSexualOrientation)
+            .then(randomizeStats)
+            .then(randomizeName)
+            .then(randomizeEducation)
+            .then(randomizeOccupation)
+            .done(deferred.resolve, deferred.reject);
+        
+        return deferred.promise;
     }
+};
 
-    return array;
-}
-
-function randomDie(die) {
-    return random(die.min, die.max);
-}
+module.exports = character;

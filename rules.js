@@ -38,6 +38,22 @@ Know = Edu*5
 */
 
 /**
+ * Repeats 'count' amount of the same value into an array and returns it
+ * @param  {T} value What value to repeat
+ * @param  {number} count How many repeats for array
+ * @return {Array<T>} Returns an array of objects repeated for count times.  
+ */
+function repeatValue(value, count) {
+    var array = [ ];
+
+    for(var i=0; i<count; i++) {
+        array.push(value);
+    }
+
+    return array;
+}
+
+/**
  * Set of rules (we consider the dice set to be part of the rules) we are publishing from the module
  * @module Rules
  */
@@ -69,7 +85,7 @@ var rules = {
      * List of sexual orientations: 3% bisexual, 2% homosexual, 95% heterosexual - gets shuffled plus index is randomized
      * @type {string[]}
      */
-    sexualOrientation: _.shuffle([ ]
+    sexualOrientations: _.shuffle([ ]
         .concat(repeatValue("homosexual", 2))
         .concat(repeatValues("bisexual", 3))
         .concat(repeatValues("heterosexual", 95)))
