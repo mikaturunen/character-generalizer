@@ -17,7 +17,19 @@ function createStub() {
         occupation: "",
         education: "",
         stats: {
-
+            ageModifier: 1,
+            strength: 1,
+            dexterity: 1,
+            intelligence: 1,
+            constitution: 1,
+            appearance: 1,
+            power: 1,
+            size: 1,
+            education: 1,
+            sanity: 0,
+            idea: 0,
+            luck: 0,
+            knowledge: 0
         }
     });
 
