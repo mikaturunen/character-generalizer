@@ -1,4 +1,6 @@
 
+var _ = require("lodash");
+
 var dice = {
     // 1d40
     ageModifier: { dice: 1, max: 40 },
@@ -40,8 +42,37 @@ Know = Edu*5
  * @module Rules
  */
 var rules = {
+    /**
+     * List of Dice and how they should be rolled for different stats
+     */
     dice: dice,
-    calculations: calculations
+
+    /**
+     * Specific calculations we are after.
+     * @type {any}
+     */
+    calculations: calculations,
+
+    /**
+     * Number for male.
+     * @type {number}
+     */
+    male: 0,
+
+    /**
+     * Number for female.
+     * @type {number}
+     */
+    female: 1,
+
+    /**
+     * List of sexual orientations: 3% bisexual, 2% homosexual, 95% heterosexual - gets shuffled plus index is randomized
+     * @type {string[]}
+     */
+    sexualOrientation: _.shuffle([ ]
+        .concat(repeatValue("homosexual", 2))
+        .concat(repeatValues("bisexual", 3))
+        .concat(repeatValues("heterosexual", 95)))
 };
 
 module.exports = dice;
