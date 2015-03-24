@@ -21,6 +21,17 @@ var calculations = {
     knowledge: 0
 };
 
+/**
+ * The following has to be true Str+Dex+Int+Con+App+Pow+Siz+Edu >= statLimit so that the character
+ * is in between the acceptable parameters.
+ * @type {Number}
+ */
+var statLimit = 90;
+
+var checkStats = (str, dex, int, con, app, pow, siz, edu) => {
+    return str + dex + int + con + app + pow + siz + edu >= statLimit;
+};
+
 /*
 AgeMod 1d40
 Str 3d6
@@ -88,7 +99,9 @@ var rules = {
     sexualOrientations: _.shuffle([ ]
         .concat(repeatValues("homosexual", 2))
         .concat(repeatValues("bisexual", 3))
-        .concat(repeatValues("heterosexual", 95)))
+        .concat(repeatValues("heterosexual", 95))),
+
+    checkStats: checkStats
 };
 
 module.exports = rules;
