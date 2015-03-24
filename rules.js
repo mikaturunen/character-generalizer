@@ -28,8 +28,67 @@ var calculations = {
  */
 var statLimit = 90;
 
-var checkStats = (str, dex, int, con, app, pow, siz, edu) => {
-    return str + dex + int + con + app + pow + siz + edu >= statLimit;
+/**
+ * Checks that the given stats are withing "good enough" based on the following equation: 
+ * Str+Dex+Int+Con+App+Pow+Siz+Edu >= statLimit.
+ * 
+ * @param {{
+        ageModifier: number;
+        strength: number;
+        dexterity: number;
+        intelligence: number;
+        constitution: number;
+        appearance: number;
+        power: number;
+        size: number;
+        education: number;
+        sanity: number;
+        idea: number;
+        luck: number;
+        knowledge: number;
+    }} stats Stats object containing the characters stats so far.
+ * @returns {boolean} True when the stats object withing the given parameters and the charcter is valid. Otherwise false.
+ */
+var checkStats = (stats) => {
+    return stats.strength + stats.dexterity + stats.intelligence + stast.constitution + stats.appearance + 
+        stats.power + stats.size + stats.education >= statLimit;
+};
+
+/**
+ * Calculates the characters age and modifies other stats depending on how old the character is.
+ * @param {{
+        ageModifier: number;
+        strength: number;
+        dexterity: number;
+        intelligence: number;
+        constitution: number;
+        appearance: number;
+        power: number;
+        size: number;
+        education: number;
+        sanity: number;
+        idea: number;
+        luck: number;
+        knowledge: number;
+    }} stats Stats object containing the characters stats so far.
+ */
+var calculateAge = (stats) => {
+    // Age = 6+Edu+AgeMod
+    stats.age = 6 + stats.education + stats.ageModifier
+
+    // Age has negative effects on differet stats depending on how old the character is
+    if (stats.age > 40) {
+        stats.dexterity -= 1;
+    } 
+    if (stats.age > 50) {
+        stats.constitution -= 1;
+    }
+    if (stats.age > 60) {
+        stats.appearance -= 1;
+    } 
+    if (stats.age > 70) {
+        stats.strength -= 1;
+    }
 };
 
 /*
@@ -101,7 +160,9 @@ var rules = {
         .concat(repeatValues("bisexual", 3))
         .concat(repeatValues("heterosexual", 95))),
 
-    checkStats: checkStats
+    checkStats: checkStats,
+
+    calculateAge: calculateAge
 };
 
 module.exports = rules;
