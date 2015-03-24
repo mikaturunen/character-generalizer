@@ -91,22 +91,6 @@ var calculateAge = (stats) => {
     }
 };
 
-/*
-AgeMod 1d40
-Str 3d6
-Dex 3d6
-Int 2d6+6
-Con 3d6
-App 3d6
-Pow 3d6
-Siz 2d6+6
-Edu 3d6+3+AgeMod%10
-San = Pow*5
-Idea = Int*5
-Luck = Pow*5
-Know = Edu*5
-*/
-
 /**
  * Repeats 'count' amount of the same value into an array and returns it
  * @param  {T} value What value to repeat
