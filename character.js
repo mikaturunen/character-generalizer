@@ -43,22 +43,6 @@ function createStub() {
     return deferred.promise;
 }
 
-function randomizeAge(character) {
-    console.log("Age");
-
-    var deferred = Q.defer();
-
-  /*  random(minimumAge, maximumAge)
-        .done(result => {
-            character.age = result;
-            deferred.resolve(character);
-        }, deferred.reject);*/
-
-    character.age = 1;
-    deferred.resolve(character);
-    return deferred.promise;
-}
-
 function randomizeGender(character) {
     console.log("Gender");
 
@@ -94,6 +78,7 @@ function randomizeStats(character) {
     console.log("Stats");
 
     var deferred = Q.defer();
+
     Q.all([
             die.roll(rules.dice.ageModifier),
             die.roll(rules.dice.strength),
@@ -106,8 +91,22 @@ function randomizeStats(character) {
             die.roll(rules.dice.education)
         ])
         .then(dieResults => {
-            console.log("RESULTS: ", dieResults.reduce((previousDie, nextDie) => previousDie + nextDie));
-            deferred.resolve(dieResults);
+            if (dieResults.reduce((previousDie, nextDie) => previousDie + nextDie) < rules.statLimit) {
+                console.log("Total was under 90. Rerolling stats dies..");
+                randomizeStats(character).done(deferred.resolve, deferred.reject);
+            } else {
+                character.stats.ageModifier = dieResults[0];
+                character.stats.strength = dieResults[1];
+                character.stats.dexterity = dieResults[2];
+                character.stats.intelligence = dieResults[3];
+                character.stats.constitution = dieResults[4];
+                character.stats.appearance = dieResults[5];
+                character.stats.power = dieResults[6];
+                character.stats.size = dieResults[7];
+                character.stats.education = dieResults[8];
+                rules.calculateMissingStats(character);
+                deferred.resolve(character);
+            }
         })
         .catch(deferred.reject)
         .done();
@@ -174,7 +173,6 @@ var character = {
         // but works for now :)
         createStub()
             .then(randomizeStats)
-            .then(randomizeAge)
             .then(randomizeGender)
             .then(randomizeSexualOrientation)
             .then(randomizeName)

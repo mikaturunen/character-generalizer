@@ -55,43 +55,6 @@ var checkStats = (stats) => {
 };
 
 /**
- * Calculates the characters age and modifies other stats depending on how old the character is.
- * @param {{
-        ageModifier: number;
-        strength: number;
-        dexterity: number;
-        intelligence: number;
-        constitution: number;
-        appearance: number;
-        power: number;
-        size: number;
-        education: number;
-        sanity: number;
-        idea: number;
-        luck: number;
-        knowledge: number;
-    }} stats Stats object containing the characters stats so far.
- */
-var calculateAge = (stats) => {
-    // Age = 6+Edu+AgeMod
-    stats.age = 6 + stats.education + stats.ageModifier
-
-    // Age has negative effects on differet stats depending on how old the character is
-    if (stats.age > 40) {
-        stats.dexterity -= 1;
-    } 
-    if (stats.age > 50) {
-        stats.constitution -= 1;
-    }
-    if (stats.age > 60) {
-        stats.appearance -= 1;
-    } 
-    if (stats.age > 70) {
-        stats.strength -= 1;
-    }
-};
-
-/**
  * Repeats 'count' amount of the same value into an array and returns it
  * @param  {T} value What value to repeat
  * @param  {number} count How many repeats for array
@@ -146,7 +109,34 @@ var rules = {
 
     checkStats: checkStats,
 
-    calculateAge: calculateAge
+    statLimit: statLimit,
+
+    calculateMissingStats: (character) => {
+        // Education
+        character.stats.education += character.stats.ageModifier % 10;
+        // Sanity, idea, luck and knowledge
+        character.stats.sanity = character.stats.power * 5;
+        character.stats.idea = character.stats.intelligence * 5;
+        character.stats.luck = character.stats.power * 5;
+        character.stats.knowledge = character.stats.education * 5;
+
+        // Age = 6+Edu+AgeMod
+        character.age = 6 + character.stats.education + character.stats.ageModifier;
+        
+        // Age has negative effects on differet stats depending on how old the character is
+        if (character.stats.age > 40) {
+            character.stats.dexterity -= 1;
+        } 
+        if (character.stats.age > 50) {
+            character.stats.constitution -= 1;
+        }
+        if (character.stats.age > 60) {
+            character.stats.appearance -= 1;
+        } 
+        if (character.stats.age > 70) {
+            character.stats.strength -= 1;
+        }
+    }
 };
 
 module.exports = rules;
