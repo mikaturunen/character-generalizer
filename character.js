@@ -94,7 +94,24 @@ function randomizeStats(character) {
     console.log("Stats");
 
     var deferred = Q.defer();
-    deferred.resolve(character);
+    Q.all([
+            die.roll(rules.dice.ageModifier),
+            die.roll(rules.dice.strength),
+            die.roll(rules.dice.dexterity),
+            die.roll(rules.dice.intelligence),
+            die.roll(rules.dice.constitution),
+            die.roll(rules.dice.appearance),
+            die.roll(rules.dice.power),
+            die.roll(rules.dice.size),
+            die.roll(rules.dice.education)
+        ])
+        .then(dieResults => {
+            console.log("RESULTS: ", dieResults.reduce((previousDie, nextDie) => previousDie + nextDie));
+            deferred.resolve(dieResults);
+        })
+        .catch(deferred.reject)
+        .done();
+
     return deferred.promise;
 }
 
@@ -156,10 +173,10 @@ var character = {
         // results with indices from the final result, not the most clean solution
         // but works for now :)
         createStub()
+            .then(randomizeStats)
             .then(randomizeAge)
             .then(randomizeGender)
             .then(randomizeSexualOrientation)
-            .then(randomizeStats)
             .then(randomizeName)
             .then(randomizeEducation)
             .then(randomizeOccupation)
