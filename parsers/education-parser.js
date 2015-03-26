@@ -12,22 +12,24 @@ var rawFile = readline.createInterface({
 });
 
 var educations = [];
+var allowSkip = true;
 var counter = 0;
+
 rawFile.on("line", line => {
     line = line.trim();
-    if (line === "" || line.length <= 1) {
-        return;
+    if (allowSkip) {
+        if (line === "" || line.length <= 2 || line.trim() === "Minor") {
+            return;
+        }
     }
 
-    counter++;
-    if(counter % 2 === 0) {
-        var index = educations.length - 1;
-        // grab name of education
-        var education = educations[index];
-        educations.splice(educations.length - 2, 1);
-        Array.prototype.push.apply(educations, line.split(",").map(l => education + ", " + l.trim()));
+    if (!allowSkip) {
+        // Last loop we read the education name, now we need to read the 'levels'
+        allowSkip = true;
+        educations[educations.length - 1].levels = line.split(",").map(l => l.trim());
     } else {
-        educations.push(line);
+        allowSkip = false;
+        educations.push({ name: line });
     }
 });
 

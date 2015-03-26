@@ -1,147 +1,582 @@
 [
-    "Accounting, Minor",
-    "Accounting, BS",
-    "Analytics",
-    "Anthropology",
-    "Anthropology, Minor",
-    "Anthropology, BA",
-    "Applied Mathematics",
-    "Applied Physics",
-    "Applied Statistics",
-    "Arabic Language",
-    "Arabic Studies",
-    "Art History",
-    "Art History, Minor",
-    "Art History, BA",
-    "Asian Studies",
-    "Audio Production",
-    "Audio Technology",
-    "Audio Technology, BS",
-    "Audio Technology, Minor",
-    "Behavior, Cognition, and Neuroscience",
-    "Biochemistry",
-    "Biochemistry, Minor",
-    "Biology",
-    "Biology, Minor",
-    "Biology, BS",
-    "Biology, MS",
-    "Business Administration",
-    "Business Administration, Minor",
-    "Business Administration, BS",
-    "Chemistry",
-    "Chemistry, Minor",
-    "Chemistry, BS",
-    "Chinese Language",
-    "Clinical Psychology",
-    "Creative Writing",
-    "Creative Writing, Minor",
-    "Dance",
-    "Economics",
-    "Economics, Minor",
-    "Economics, BS",
-    "Economics, BA",
-    "Economics, PhD",
-    "Education Studies",
-    "Elementary Education",
-    "Entrepreneurship",
-    "Environmental Science",
-    "Environmental Science, BS",
-    "Environmental Science, Minor",
-    "Environmental Studies",
-    "Film and Media Arts",
-    "Finance",
-    "Finance, Minor",
-    "Finance, BS",
-    "Fine Arts",
-    "French Language",
-    "French Studies",
-    "Gender Analysis in Economics",
-    "German Language",
-    "German Studies",
-    "Graphic Design",
-    "Graphic Design, Minor",
-    "History",
-    "History, Minor",
-    "History, BA",
-    "History, PhD",
-    "International Affairs",
-    "International Business",
-    "International Communication",
-    "International Development",
-    "International Economics",
-    "International Media",
-    "International Relations",
-    "International Relations, PhD",
-    "Israel Studies",
-    "Japanese Language",
-    "Jewish Studies",
-    "Jewish Studies, Minor",
-    "Journalism",
-    "Justice",
-    "Justice and Law",
-    "Justice, Law and Criminology",
-    "Justice, Law and Criminology, PhD",
-    "Law",
-    "Law, Minor",
-    "Literature",
-    "Literature, Minor",
-    "Literature, BA",
-    "Marketing",
-    "Marketing, Minor",
-    "Mathematics",
-    "Mathematics, Minor",
-    "Mathematics, BS",
-    "Mathematics and Economics",
-    "Music",
-    "Music, Minor",
-    "Neuroscience",
-    "North American Studies",
-    "Performing Arts: Musical Theatre",
-    "Performing Arts: Theatre",
-    "Philosophy",
-    "Philosophy, Minor",
-    "Philosophy, BA",
-    "Physics",
-    "Physics, BA",
-    "Physics, Minor",
-    "Physics, BS",
-    "Politics",
-    "Psychobiology of Healing",
-    "Psychology",
-    "Psychology, Minor",
-    "Psychology, BA",
-    "Psychology, PhD",
-    "Public Administration",
-    "Public Administration, PhD",
-    "Public Anthropology",
-    "Public Anthropology, Minor",
-    "Public Communication",
-    "Public Health",
-    "Public Health, Minor",
-    "Public Health, BS",
-    "Quantitative Methods",
-    "Real Estate",
-    "Religion",
-    "Religious Studies",
-    "Russian Language",
-    "Russian Studies",
-    "Russian Studies, Minor",
-    "Secondary Education",
-    "Sexuality and Queer Studies",
-    "Sociology",
-    "Sociology, Minor",
-    "Sociology, BA",
-    "Spanish Language",
-    "Spanish Studies",
-    "Statistics",
-    "Statistics, Minor",
-    "Statistics, BS",
-    "Strategic Communication",
-    "Studio Art",
-    "Studio Art, Minor",
-    "Studio Art, BA",
-    "Taxation",
-    "Teaching",
-    "Theatre",
-    "Theatre, Minor"
+    {
+        "name": "Accounting",
+        "levels": [
+            "Minor",
+            "BS",
+            "MS"
+        ]
+    },
+    {
+        "name": "Analytics",
+        "levels": [
+            "MS"
+        ]
+    },
+    {
+        "name": "Anthropology",
+        "levels": [
+            "Minor",
+            "BA",
+            "PhD"
+        ]
+    },
+    {
+        "name": "Applied Mathematics",
+        "levels": [
+            "BS"
+        ]
+    },
+    {
+        "name": "Applied Physics",
+        "levels": [
+            "Minor"
+        ]
+    },
+    {
+        "name": "Applied Statistics",
+        "levels": [
+            "Minor"
+        ]
+    },
+    {
+        "name": "Arabic Language",
+        "levels": [
+            "Minor"
+        ]
+    },
+    {
+        "name": "Arabic Studies",
+        "levels": [
+            "BA"
+        ]
+    },
+    {
+        "name": "Art History",
+        "levels": [
+            "Minor",
+            "BA",
+            "MA"
+        ]
+    },
+    {
+        "name": "Asian Studies",
+        "levels": [
+            "BA"
+        ]
+    },
+    {
+        "name": "Audio Production",
+        "levels": [
+            "BA"
+        ]
+    },
+    {
+        "name": "Audio Technology",
+        "levels": [
+            "BS",
+            "Minor",
+            "MA"
+        ]
+    },
+    {
+        "name": "Behavior, Cognition, and Neuroscience",
+        "levels": [
+            "PhD"
+        ]
+    },
+    {
+        "name": "Biochemistry",
+        "levels": [
+            "Minor",
+            "BS"
+        ]
+    },
+    {
+        "name": "Biology",
+        "levels": [
+            "Minor",
+            "BS",
+            "MS",
+            "MA"
+        ]
+    },
+    {
+        "name": "Business Administration",
+        "levels": [
+            "Minor",
+            "BS",
+            "MBA"
+        ]
+    },
+    {
+        "name": "Chemistry",
+        "levels": [
+            "Minor",
+            "BS",
+            "MS"
+        ]
+    },
+    {
+        "name": "Chinese Language",
+        "levels": [
+            "Minor"
+        ]
+    },
+    {
+        "name": "Clinical Psychology",
+        "levels": [
+            "PhD"
+        ]
+    },
+    {
+        "name": "Creative Writing",
+        "levels": [
+            "Minor",
+            "MFA"
+        ]
+    },
+    {
+        "name": "Dance",
+        "levels": [
+            "Minor"
+        ]
+    },
+    {
+        "name": "Economics",
+        "levels": [
+            "Minor",
+            "BS",
+            "BA",
+            "PhD",
+            "MA"
+        ]
+    },
+    {
+        "name": "Education Studies",
+        "levels": [
+            "Minor"
+        ]
+    },
+    {
+        "name": "Elementary Education",
+        "levels": [
+            "BA"
+        ]
+    },
+    {
+        "name": "Entrepreneurship",
+        "levels": [
+            "Minor"
+        ]
+    },
+    {
+        "name": "Environmental Science",
+        "levels": [
+            "BS",
+            "Minor",
+            "MS"
+        ]
+    },
+    {
+        "name": "Environmental Studies",
+        "levels": [
+            "BA"
+        ]
+    },
+    {
+        "name": "Film and Media Arts",
+        "levels": [
+            "BA"
+        ]
+    },
+    {
+        "name": "Finance",
+        "levels": [
+            "Minor",
+            "BS",
+            "MS"
+        ]
+    },
+    {
+        "name": "Fine Arts",
+        "levels": [
+            "BFA"
+        ]
+    },
+    {
+        "name": "French Language",
+        "levels": [
+            "Minor"
+        ]
+    },
+    {
+        "name": "French Studies",
+        "levels": [
+            "BA"
+        ]
+    },
+    {
+        "name": "Gender Analysis in Economics",
+        "levels": [
+            "PhD"
+        ]
+    },
+    {
+        "name": "German Language",
+        "levels": [
+            "Minor"
+        ]
+    },
+    {
+        "name": "German Studies",
+        "levels": [
+            "BA"
+        ]
+    },
+    {
+        "name": "Graphic Design",
+        "levels": [
+            "Minor",
+            "BA"
+        ]
+    },
+    {
+        "name": "History",
+        "levels": [
+            "Minor",
+            "BA",
+            "PhD",
+            "MA"
+        ]
+    },
+    {
+        "name": "International Affairs",
+        "levels": [
+            "MA"
+        ]
+    },
+    {
+        "name": "International Business",
+        "levels": [
+            "Minor"
+        ]
+    },
+    {
+        "name": "International Communication",
+        "levels": [
+            "MA"
+        ]
+    },
+    {
+        "name": "International Development",
+        "levels": [
+            "MA"
+        ]
+    },
+    {
+        "name": "International Economics",
+        "levels": [
+            "MA"
+        ]
+    },
+    {
+        "name": "International Media",
+        "levels": [
+            "MA"
+        ]
+    },
+    {
+        "name": "International Relations",
+        "levels": [
+            "PhD",
+            "MA"
+        ]
+    },
+    {
+        "name": "Israel Studies",
+        "levels": [
+            "Minor"
+        ]
+    },
+    {
+        "name": "Japanese Language",
+        "levels": [
+            "Minor"
+        ]
+    },
+    {
+        "name": "Jewish Studies",
+        "levels": [
+            "Minor",
+            "BA"
+        ]
+    },
+    {
+        "name": "Journalism",
+        "levels": [
+            "BA"
+        ]
+    },
+    {
+        "name": "Justice",
+        "levels": [
+            "Minor"
+        ]
+    },
+    {
+        "name": "Justice and Law",
+        "levels": [
+            "BA"
+        ]
+    },
+    {
+        "name": "Justice, Law and Criminology",
+        "levels": [
+            "PhD",
+            "MS"
+        ]
+    },
+    {
+        "name": "Law",
+        "levels": [
+            "Minor",
+            "BA"
+        ]
+    },
+    {
+        "name": "Literature",
+        "levels": [
+            "Minor",
+            "BA",
+            "MA"
+        ]
+    },
+    {
+        "name": "Marketing",
+        "levels": [
+            "Minor",
+            "MS"
+        ]
+    },
+    {
+        "name": "Mathematics",
+        "levels": [
+            "Minor",
+            "BS",
+            "MA"
+        ]
+    },
+    {
+        "name": "Mathematics and Economics",
+        "levels": [
+            "BS"
+        ]
+    },
+    {
+        "name": "Music",
+        "levels": [
+            "Minor",
+            "BA"
+        ]
+    },
+    {
+        "name": "Neuroscience",
+        "levels": [
+            "BS"
+        ]
+    },
+    {
+        "name": "North American Studies",
+        "levels": [
+            "Minor"
+        ]
+    },
+    {
+        "name": "Performing Arts: Musical Theatre",
+        "levels": [
+            "BA"
+        ]
+    },
+    {
+        "name": "Performing Arts: Theatre",
+        "levels": [
+            "BA"
+        ]
+    },
+    {
+        "name": "Philosophy",
+        "levels": [
+            "Minor",
+            "BA",
+            "MA"
+        ]
+    },
+    {
+        "name": "Physics",
+        "levels": [
+            "BA",
+            "Minor",
+            "BS",
+            "PhD"
+        ]
+    },
+    {
+        "name": "Politics",
+        "levels": [
+            "MA"
+        ]
+    },
+    {
+        "name": "Psychobiology of Healing",
+        "levels": [
+            "BA"
+        ]
+    },
+    {
+        "name": "Psychology",
+        "levels": [
+            "Minor",
+            "BA",
+            "PhD",
+            "MA"
+        ]
+    },
+    {
+        "name": "Public Administration",
+        "levels": [
+            "PhD",
+            "MPA"
+        ]
+    },
+    {
+        "name": "Public Anthropology",
+        "levels": [
+            "Minor",
+            "MA"
+        ]
+    },
+    {
+        "name": "Public Communication",
+        "levels": [
+            "BA"
+        ]
+    },
+    {
+        "name": "Public Health",
+        "levels": [
+            "Minor",
+            "BS",
+            "BA"
+        ]
+    },
+    {
+        "name": "Quantitative Methods",
+        "levels": [
+            "Minor"
+        ]
+    },
+    {
+        "name": "Real Estate",
+        "levels": [
+            "MS"
+        ]
+    },
+    {
+        "name": "Religion",
+        "levels": [
+            "Minor"
+        ]
+    },
+    {
+        "name": "Religious Studies",
+        "levels": [
+            "BA"
+        ]
+    },
+    {
+        "name": "Russian Language",
+        "levels": [
+            "Minor"
+        ]
+    },
+    {
+        "name": "Russian Studies",
+        "levels": [
+            "Minor",
+            "BA"
+        ]
+    },
+    {
+        "name": "Secondary Education",
+        "levels": [
+            "BA"
+        ]
+    },
+    {
+        "name": "Sexuality and Queer Studies",
+        "levels": [
+            "Minor"
+        ]
+    },
+    {
+        "name": "Sociology",
+        "levels": [
+            "Minor",
+            "BA",
+            "MA"
+        ]
+    },
+    {
+        "name": "Spanish Language",
+        "levels": [
+            "Minor"
+        ]
+    },
+    {
+        "name": "Spanish Studies",
+        "levels": [
+            "BA"
+        ]
+    },
+    {
+        "name": "Statistics",
+        "levels": [
+            "Minor",
+            "BS",
+            "MS"
+        ]
+    },
+    {
+        "name": "Strategic Communication",
+        "levels": [
+            "MA"
+        ]
+    },
+    {
+        "name": "Studio Art",
+        "levels": [
+            "Minor",
+            "BA",
+            "MFA"
+        ]
+    },
+    {
+        "name": "Taxation",
+        "levels": [
+            "MS"
+        ]
+    },
+    {
+        "name": "Teaching",
+        "levels": [
+            "MAT"
+        ]
+    },
+    {
+        "name": "Theatre",
+        "levels": [
+            "Minor"
+        ]
+    }
 ]
