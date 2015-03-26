@@ -136,6 +136,10 @@ var rules = {
         if (character.stats.age > 70) {
             character.stats.strength -= 1;
         }
+    },
+
+    getEducation: (character) => {
+        
     }
 };
 
