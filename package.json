@@ -1,8 +1,8 @@
 {
-  "name": "character-generalizer",
+  "name": "cthulhu-character-generator",
   "version": "0.0.1",
   "description": "A character creator for all those lovely generalized needs - mainly cthulhu for now :)",
-  "main": "character.js",
+  "main": "cthulhu-character.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
