@@ -92,10 +92,13 @@ function randomizeStats(character) {
             die.roll(rules.dice.education)
         ])
         .then(dieResults => {
+            var ageMod = dieResults.shift();
+
             if (dieResults.reduce((previousDie, nextDie) => previousDie + nextDie) < rules.statLimit) {
                 console.log("Total was under 90. Rerolling stats dies..");
                 randomizeStats(character).done(deferred.resolve, deferred.reject);
             } else {
+                dieResults.unshift(ageMod);
                 character.stats.ageModifier = dieResults[0];
                 character.stats.strength = dieResults[1];
                 character.stats.dexterity = dieResults[2];
