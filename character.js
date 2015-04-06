@@ -135,14 +135,40 @@ function randomizeName(character) {
     return deferred.promise;
 }
 
-function randomizeEducation(character) {
+function randomizeEducation(character, depth) {
     var deferred = Q.defer();
 
-    random(0, education.length - 1)
-        .done(result => {
-            character.education = education[result];
-            deferred.resolve(character);
-        }, deferred.reject);
+    if (!depth)
+    {
+        depth = 0;
+        character.education = "None";
+    }
+
+    if (depth >= 1000)
+    {
+        deferred.resolve(character);
+    }
+    else {
+        random(0, education.length - 1)
+            .done(result => {
+                education[result].levels
+                    .sort((a, b) => {return b.value-a.value})
+                    .some((level) => {
+                        if (level.value <= character.stats.education)
+                        {
+                            character.education = education[result].name+", "+education[result].levels[0].level;
+                            deferred.resolve(character);
+                            return true;
+                        }
+                        else
+                            return false;
+                    });
+
+                    if (character.education === "None")
+                        randomizeEducation(character,depth+1);
+
+            },deferred.reject);
+    }
 
     return deferred.promise;
 }

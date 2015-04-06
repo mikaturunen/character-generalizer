@@ -2,581 +2,1016 @@
     {
         "name": "Accounting",
         "levels": [
-            "Minor",
-            "BS",
-            "MS"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "BS",
+                "value": 8
+            },
+            {
+                "level": "MS",
+                "value": 12
+            }
         ]
     },
     {
         "name": "Analytics",
         "levels": [
-            "MS"
+            {
+                "level": "MS",
+                "value": 12
+            }
         ]
     },
     {
         "name": "Anthropology",
         "levels": [
-            "Minor",
-            "BA",
-            "PhD"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "BA",
+                "value": 8
+            },
+            {
+                "level": "PhD",
+                "value": 20
+            }
         ]
     },
     {
         "name": "Applied Mathematics",
         "levels": [
-            "BS"
+            {
+                "level": "BS",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Applied Physics",
         "levels": [
-            "Minor"
+            {
+                "level": "Minor",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Applied Statistics",
         "levels": [
-            "Minor"
+            {
+                "level": "Minor",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Arabic Language",
         "levels": [
-            "Minor"
+            {
+                "level": "Minor",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Arabic Studies",
         "levels": [
-            "BA"
+            {
+                "level": "BA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Art History",
         "levels": [
-            "Minor",
-            "BA",
-            "MA"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "BA",
+                "value": 8
+            },
+            {
+                "level": "MA",
+                "value": 12
+            }
         ]
     },
     {
         "name": "Asian Studies",
         "levels": [
-            "BA"
+            {
+                "level": "BA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Audio Production",
         "levels": [
-            "BA"
+            {
+                "level": "BA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Audio Technology",
         "levels": [
-            "BS",
-            "Minor",
-            "MA"
+            {
+                "level": "BS",
+                "value": 8
+            },
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "MA",
+                "value": 12
+            }
         ]
     },
     {
         "name": "Behavior, Cognition, and Neuroscience",
         "levels": [
-            "PhD"
+            {
+                "level": "PhD",
+                "value": 20
+            }
         ]
     },
     {
         "name": "Biochemistry",
         "levels": [
-            "Minor",
-            "BS"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "BS",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Biology",
         "levels": [
-            "Minor",
-            "BS",
-            "MS",
-            "MA"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "BS",
+                "value": 8
+            },
+            {
+                "level": "MS",
+                "value": 12
+            },
+            {
+                "level": "MA",
+                "value": 12
+            }
         ]
     },
     {
         "name": "Business Administration",
         "levels": [
-            "Minor",
-            "BS",
-            "MBA"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "BS",
+                "value": 8
+            },
+            {
+                "level": "MBA",
+                "value": 12
+            }
         ]
     },
     {
         "name": "Chemistry",
         "levels": [
-            "Minor",
-            "BS",
-            "MS"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "BS",
+                "value": 8
+            },
+            {
+                "level": "MS",
+                "value": 12
+            }
         ]
     },
     {
         "name": "Chinese Language",
         "levels": [
-            "Minor"
+            {
+                "level": "Minor",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Clinical Psychology",
         "levels": [
-            "PhD"
+            {
+                "level": "PhD",
+                "value": 20
+            }
         ]
     },
     {
         "name": "Creative Writing",
         "levels": [
-            "Minor",
-            "MFA"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "MFA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Dance",
         "levels": [
-            "Minor"
+            {
+                "level": "Minor",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Economics",
         "levels": [
-            "Minor",
-            "BS",
-            "BA",
-            "PhD",
-            "MA"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "BS",
+                "value": 8
+            },
+            {
+                "level": "BA",
+                "value": 8
+            },
+            {
+                "level": "PhD",
+                "value": 20
+            },
+            {
+                "level": "MA",
+                "value": 12
+            }
         ]
     },
     {
         "name": "Education Studies",
         "levels": [
-            "Minor"
+            {
+                "level": "Minor",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Elementary Education",
         "levels": [
-            "BA"
+            {
+                "level": "BA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Entrepreneurship",
         "levels": [
-            "Minor"
+            {
+                "level": "Minor",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Environmental Science",
         "levels": [
-            "BS",
-            "Minor",
-            "MS"
+            {
+                "level": "BS",
+                "value": 8
+            },
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "MS",
+                "value": 12
+            }
         ]
     },
     {
         "name": "Environmental Studies",
         "levels": [
-            "BA"
+            {
+                "level": "BA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Film and Media Arts",
         "levels": [
-            "BA"
+            {
+                "level": "BA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Finance",
         "levels": [
-            "Minor",
-            "BS",
-            "MS"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "BS",
+                "value": 8
+            },
+            {
+                "level": "MS",
+                "value": 12
+            }
         ]
     },
     {
         "name": "Fine Arts",
         "levels": [
-            "BFA"
+            {
+                "level": "BFA",
+                "value": 99
+            }
         ]
     },
     {
         "name": "French Language",
         "levels": [
-            "Minor"
+            {
+                "level": "Minor",
+                "value": 8
+            }
         ]
     },
     {
         "name": "French Studies",
         "levels": [
-            "BA"
+            {
+                "level": "BA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Gender Analysis in Economics",
         "levels": [
-            "PhD"
+            {
+                "level": "PhD",
+                "value": 20
+            }
         ]
     },
     {
         "name": "German Language",
         "levels": [
-            "Minor"
+            {
+                "level": "Minor",
+                "value": 8
+            }
         ]
     },
     {
         "name": "German Studies",
         "levels": [
-            "BA"
+            {
+                "level": "BA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Graphic Design",
         "levels": [
-            "Minor",
-            "BA"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "BA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "History",
         "levels": [
-            "Minor",
-            "BA",
-            "PhD",
-            "MA"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "BA",
+                "value": 8
+            },
+            {
+                "level": "PhD",
+                "value": 20
+            },
+            {
+                "level": "MA",
+                "value": 12
+            }
         ]
     },
     {
         "name": "International Affairs",
         "levels": [
-            "MA"
+            {
+                "level": "MA",
+                "value": 12
+            }
         ]
     },
     {
         "name": "International Business",
         "levels": [
-            "Minor"
+            {
+                "level": "Minor",
+                "value": 8
+            }
         ]
     },
     {
         "name": "International Communication",
         "levels": [
-            "MA"
+            {
+                "level": "MA",
+                "value": 12
+            }
         ]
     },
     {
         "name": "International Development",
         "levels": [
-            "MA"
+            {
+                "level": "MA",
+                "value": 12
+            }
         ]
     },
     {
         "name": "International Economics",
         "levels": [
-            "MA"
+            {
+                "level": "MA",
+                "value": 12
+            }
         ]
     },
     {
         "name": "International Media",
         "levels": [
-            "MA"
+            {
+                "level": "MA",
+                "value": 12
+            }
         ]
     },
     {
         "name": "International Relations",
         "levels": [
-            "PhD",
-            "MA"
+            {
+                "level": "PhD",
+                "value": 20
+            },
+            {
+                "level": "MA",
+                "value": 12
+            }
         ]
     },
     {
         "name": "Israel Studies",
         "levels": [
-            "Minor"
+            {
+                "level": "Minor",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Japanese Language",
         "levels": [
-            "Minor"
+            {
+                "level": "Minor",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Jewish Studies",
         "levels": [
-            "Minor",
-            "BA"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "BA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Journalism",
         "levels": [
-            "BA"
+            {
+                "level": "BA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Justice",
         "levels": [
-            "Minor"
+            {
+                "level": "Minor",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Justice and Law",
         "levels": [
-            "BA"
+            {
+                "level": "BA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Justice, Law and Criminology",
         "levels": [
-            "PhD",
-            "MS"
+            {
+                "level": "PhD",
+                "value": 20
+            },
+            {
+                "level": "MS",
+                "value": 12
+            }
         ]
     },
     {
         "name": "Law",
         "levels": [
-            "Minor",
-            "BA"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "BA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Literature",
         "levels": [
-            "Minor",
-            "BA",
-            "MA"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "BA",
+                "value": 8
+            },
+            {
+                "level": "MA",
+                "value": 12
+            }
         ]
     },
     {
         "name": "Marketing",
         "levels": [
-            "Minor",
-            "MS"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "MS",
+                "value": 12
+            }
         ]
     },
     {
         "name": "Mathematics",
         "levels": [
-            "Minor",
-            "BS",
-            "MA"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "BS",
+                "value": 8
+            },
+            {
+                "level": "MA",
+                "value": 12
+            }
         ]
     },
     {
         "name": "Mathematics and Economics",
         "levels": [
-            "BS"
+            {
+                "level": "BS",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Music",
         "levels": [
-            "Minor",
-            "BA"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "BA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Neuroscience",
         "levels": [
-            "BS"
+            {
+                "level": "BS",
+                "value": 8
+            }
         ]
     },
     {
         "name": "North American Studies",
         "levels": [
-            "Minor"
+            {
+                "level": "Minor",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Performing Arts: Musical Theatre",
         "levels": [
-            "BA"
+            {
+                "level": "BA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Performing Arts: Theatre",
         "levels": [
-            "BA"
+            {
+                "level": "BA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Philosophy",
         "levels": [
-            "Minor",
-            "BA",
-            "MA"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "BA",
+                "value": 8
+            },
+            {
+                "level": "MA",
+                "value": 12
+            }
         ]
     },
     {
         "name": "Physics",
         "levels": [
-            "BA",
-            "Minor",
-            "BS",
-            "PhD"
+            {
+                "level": "BA",
+                "value": 8
+            },
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "BS",
+                "value": 8
+            },
+            {
+                "level": "PhD",
+                "value": 20
+            }
         ]
     },
     {
         "name": "Politics",
         "levels": [
-            "MA"
+            {
+                "level": "MA",
+                "value": 12
+            }
         ]
     },
     {
         "name": "Psychobiology of Healing",
         "levels": [
-            "BA"
+            {
+                "level": "BA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Psychology",
         "levels": [
-            "Minor",
-            "BA",
-            "PhD",
-            "MA"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "BA",
+                "value": 8
+            },
+            {
+                "level": "PhD",
+                "value": 20
+            },
+            {
+                "level": "MA",
+                "value": 12
+            }
         ]
     },
     {
         "name": "Public Administration",
         "levels": [
-            "PhD",
-            "MPA"
+            {
+                "level": "PhD",
+                "value": 20
+            },
+            {
+                "level": "MPA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Public Anthropology",
         "levels": [
-            "Minor",
-            "MA"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "MA",
+                "value": 12
+            }
         ]
     },
     {
         "name": "Public Communication",
         "levels": [
-            "BA"
+            {
+                "level": "BA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Public Health",
         "levels": [
-            "Minor",
-            "BS",
-            "BA"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "BS",
+                "value": 8
+            },
+            {
+                "level": "BA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Quantitative Methods",
         "levels": [
-            "Minor"
+            {
+                "level": "Minor",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Real Estate",
         "levels": [
-            "MS"
+            {
+                "level": "MS",
+                "value": 12
+            }
         ]
     },
     {
         "name": "Religion",
         "levels": [
-            "Minor"
+            {
+                "level": "Minor",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Religious Studies",
         "levels": [
-            "BA"
+            {
+                "level": "BA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Russian Language",
         "levels": [
-            "Minor"
+            {
+                "level": "Minor",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Russian Studies",
         "levels": [
-            "Minor",
-            "BA"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "BA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Secondary Education",
         "levels": [
-            "BA"
+            {
+                "level": "BA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Sexuality and Queer Studies",
         "levels": [
-            "Minor"
+            {
+                "level": "Minor",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Sociology",
         "levels": [
-            "Minor",
-            "BA",
-            "MA"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "BA",
+                "value": 8
+            },
+            {
+                "level": "MA",
+                "value": 12
+            }
         ]
     },
     {
         "name": "Spanish Language",
         "levels": [
-            "Minor"
+            {
+                "level": "Minor",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Spanish Studies",
         "levels": [
-            "BA"
+            {
+                "level": "BA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Statistics",
         "levels": [
-            "Minor",
-            "BS",
-            "MS"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "BS",
+                "value": 8
+            },
+            {
+                "level": "MS",
+                "value": 12
+            }
         ]
     },
     {
         "name": "Strategic Communication",
         "levels": [
-            "MA"
+            {
+                "level": "MA",
+                "value": 12
+            }
         ]
     },
     {
         "name": "Studio Art",
         "levels": [
-            "Minor",
-            "BA",
-            "MFA"
+            {
+                "level": "Minor",
+                "value": 8
+            },
+            {
+                "level": "BA",
+                "value": 8
+            },
+            {
+                "level": "MFA",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Taxation",
         "levels": [
-            "MS"
+            {
+                "level": "MS",
+                "value": 12
+            }
         ]
     },
     {
         "name": "Teaching",
         "levels": [
-            "MAT"
+            {
+                "level": "MAT",
+                "value": 8
+            }
         ]
     },
     {
         "name": "Theatre",
         "levels": [
-            "Minor"
+            {
+                "level": "Minor",
+                "value": 8
+            }
         ]
     }
 ]

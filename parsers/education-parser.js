@@ -12,6 +12,8 @@ var rawFile = readline.createInterface({
 });
 
 var educations = [];
+var levels = [];
+var parsed = [];
 var allowSkip = true;
 var counter = 0;
 
@@ -26,7 +28,27 @@ rawFile.on("line", line => {
     if (!allowSkip) {
         // Last loop we read the education name, now we need to read the 'levels'
         allowSkip = true;
-        educations[educations.length - 1].levels = line.split(",").map(l => l.trim());
+        levels = line.split(",").map(l => l.trim());
+        parsed = [];
+        levels.forEach((level) => {
+            switch (level)
+            {
+                case "PhD": parsed.push({level: level,value: 20}); break;
+                case "MS":
+                case "MBA":
+                case "MA": parsed.push({level: level,value: 12}); break;
+                case "BS":
+                case "BA":
+                case "MFA":
+                case "MPA":
+                case "Minor":
+                case "MAT": parsed.push({level: level,value: 8}); break;
+                default: parsed.push({level: level,value: 99}); break;
+            }
+        });
+
+
+        educations[educations.length - 1].levels = parsed;
     } else {
         allowSkip = false;
         educations.push({ name: line });
