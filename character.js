@@ -152,22 +152,23 @@ function randomizeEducation(character, depth) {
         random(0, education.length - 1)
             .done(result => {
                 education[result].levels
-                    .sort((a, b) => {return b.value-a.value})
+                    .sort((a, b) => { return b.value - a.value; })
                     .some((level) => {
-                        if (level.value <= character.stats.education)
-                        {
-                            character.education = education[result].name+", "+education[result].levels[0].level;
+                        if (level.value <= character.stats.education) {
+                            character.education = education[result].name + ", " + education[result].levels[0].level;
                             deferred.resolve(character);
                             return true;
                         }
-                        else
+                        else {
                             return false;
+                        }
                     });
 
-                    if (character.education === "None")
-                        randomizeEducation(character,depth+1);
+                    if (character.education === "None") {
+                        randomizeEducation(character, depth + 1);
+                    }
 
-            },deferred.reject);
+            }, deferred.reject);
     }
 
     return deferred.promise;
