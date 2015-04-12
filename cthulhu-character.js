@@ -1,13 +1,8 @@
 "use strict";
 
-
-// Requiring set of json files
 var packageInformation = require("./package.json");
-
-var rules = require("./rules");
-var die = require("./die");
-var random = require("./random");
-var character = require("./character");
+var character = require("./cthulhu/character");
+var random = require("./cthulhu/random");
 
 var Q = require("q");
 var argumentsParser = require("arg-parser");
@@ -20,7 +15,9 @@ var args = new argumentsParser(
         "Currently loosely creates million alternatives for your Cthulhu specific character - silly little thing :)"
     );
  
-args.add({ name: "online", desc: "uses random.org for random generation.", switches: [ "-o", "--online"] });
+args.add({ 
+    name: "online", desc: "uses random.org for random generation.", switches: [ "-o", "--online" ] 
+});
 
 if (!args.parse()) {
     // User ran the script with -h
@@ -32,25 +29,4 @@ if (!args.parse()) {
 
 character
     .create()
-    .done(displayResults, error => console.log("ERROR: ", error));
-
-/**
- * Used to transform the given amount of data into specific set of results.
- * @param {Object[]} results List of results from all the async queries into
- * random.org. Accessed with documented indices.
- * @returns {Object}
- */
-function transformResults(results) {
-    return results;
-};
-
-/**
- * Used to display the results.
- * @param {Object[]} results List of results.
- */
-function displayResults(results) {
-    var transformedResults = transformResults(results);
-
-    console.log(results);
-};
-
+    .done(results => console.log(results), error => console.log("ERROR: ", error));
