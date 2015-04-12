@@ -22,5 +22,4 @@ Yes, quite few - to name a few:
 
 * Write a simple script that puts everything into a mongo database
 * Allow easy setup into heroku (database wise)
-* Build a proper UI for the project
-** That'll probably be a separate project and this just generates the characters for the UI
+* Build a proper UI for the project (that'll probably be a separate project and this just generates the characters for the UI)
