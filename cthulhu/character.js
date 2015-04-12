@@ -4,10 +4,10 @@ var rules = require("./rules");
 var die = require("./die");
 var random = require("./random");
 
-var occupation = require("./assets/occupation.json");
-var education = require("./assets/education.json");
-var firstNames = require("./assets/first-names.json");
-var lastNames = require("./assets/last-names.json");
+var occupation = require("../assets/occupation.json");
+var education = require("../assets/education.json");
+var firstNames = require("../assets/first-names.json");
+var lastNames = require("../assets/last-names.json");
 
 /** 
  * Creates a simple Character stub for us to modify and handle.
