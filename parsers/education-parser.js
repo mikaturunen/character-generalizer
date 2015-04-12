@@ -33,21 +33,20 @@ rawFile.on("line", line => {
         levels.forEach((level) => {
             switch (level)
             {
-                case "PhD": parsed.push({level: level,value: 20}); break;
+                case "PhD": parsed.push({ level: level, value: 20 }); break;
                 case "MS":
                 case "MBA":
-                case "MA": parsed.push({level: level,value: 12}); break;
+                case "MA": parsed.push({ level: level, value: 12 }); break;
                 case "BS":
                 case "BA":
                 case "MFA":
                 case "MPA":
                 case "Minor":
-                case "MAT": parsed.push({level: level,value: 8}); break;
-                default: parsed.push({level: level,value: 99}); break;
+                case "MAT": parsed.push({ level: level, value: 8 }); break;
+                default: parsed.push({ level: level, value: 99 }); break;
             }
         });
-
-
+        
         educations[educations.length - 1].levels = parsed;
     } else {
         allowSkip = false;

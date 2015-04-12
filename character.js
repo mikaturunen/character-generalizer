@@ -151,6 +151,9 @@ function randomizeEducation(character, depth) {
     else {
         random(0, education.length - 1)
             .done(result => {
+
+                // TODO refactor the recursive education chooser
+                
                 education[result].levels
                     .sort((a, b) => { return b.value - a.value; })
                     .some((level) => {
