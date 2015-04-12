@@ -1,6 +1,6 @@
 {
   "name": "cthulhu-character-generator",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A character creator for all those lovely generalized needs - mainly cthulhu for now :)",
   "main": "cthulhu-character.js",
   "scripts": {
