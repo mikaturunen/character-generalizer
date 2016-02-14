@@ -2,7 +2,7 @@
   "name": "cthulhu-character-generator",
   "version": "1.0.0",
   "description": "A character creator for all those lovely generalized needs - mainly cthulhu for now :)",
-  "main": "release/cthulhu-character-generator.js",
+  "main": "lib/cthulhu-character-generator.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,8 +14,7 @@
     "generalized"
   ],
   "author": "Mika Turunen <mika.turunen@ymail.com>",
-  "repository" :
-  {
+  "repository": {
     "type": "git",
     "url": "https://github.com/mikaturunen/character-generalizer"
   },
@@ -38,6 +37,7 @@
     "gulp-tslint": "^4.3.1",
     "gulp-typescript": "^2.11.0",
     "gulp-watch": "^4.3.5",
+    "merge2": "^1.0.1",
     "run-sequence": "^1.1.5",
     "supervisor": "^0.9.1",
     "tslint": "^3.3.0",

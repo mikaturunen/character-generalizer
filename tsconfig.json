@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "target": "es6",
-        "declaration": false,
+        "declaration": true,
         "noImplicitAny": true,
         "removeComments": true,
         "noLib": false
@@ -14,9 +14,13 @@
     ],
     "files": [
         "typedefinitions/backend.d.ts",
+        "lib/cthulhu-character-generator.d.ts",
         "lib/cthulhu-character-generator.ts",
+        "lib/die.d.ts",
         "lib/die.ts",
+        "lib/random.d.ts",
         "lib/random.ts",
+        "lib/rules.d.ts",
         "lib/rules.ts"
     ],
     "atom": {

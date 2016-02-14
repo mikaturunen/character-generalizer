@@ -11,16 +11,16 @@ var tslint = require("gulp-tslint");
 var sequence = require("run-sequence").use(gulp);
 var babel = require("gulp-babel");
 var path = require("path");
+var merge = require("merge2");
 
 var typeScriptSource = [
     "./typedefinitions/backend.d.ts",
     "./lib/**/*.ts"
 ];
-var typeScriptDestination = "./release/";
 
 // TYPESCRIPT COMPILATION
 gulp.task("typescript", function() {
-    return gulp
+    var tsResult = gulp
         .src( typeScriptSource )
         // Pipe source to lint
         .pipe(tslint())
@@ -28,21 +28,23 @@ gulp.task("typescript", function() {
         // Push through to compiler
         .pipe(ts({
             typescript: require("typescript"),
-            target: 'es6',
-            sourceMap: true,
+            target: "es6",
+            sourceMap: false,
             removeComments: false,
             declaration: true,
             noImplicitAny: true,
-            failOnTypeErrors: true,
+            failOnTypeErrors: false,
             suppressImplicitAnyIndexErrors: true
-        }))
-        // Through babel (es6->es5)
-        .pipe(babel({
-            comments: false,
+        }));
+
+	return merge([
+		tsResult.dts.pipe(gulp.dest("./lib")),
+		tsResult.js.pipe(babel({
+            comments: true,
             presets: [ "es2015" ]
         }))
-        .pipe(gulp.dest(typeScriptDestination));
-
+        .pipe(gulp.dest("./lib"))
+	]);
 });
 
 /**
