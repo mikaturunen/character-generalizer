@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "declaration": false,
+        "noImplicitAny": true,
+        "removeComments": true,
+        "noLib": false
+    },
+    "compileOnSave": false,
+    "filesGlob": [
+        "typedefinitions/backend.d.ts",
+        "lib/**/*.ts",
+        "!node_modules/**"
+    ],
+    "files": [
+        "typedefinitions/backend.d.ts",
+        "lib/character.ts",
+        "lib/die.ts",
+        "lib/random.ts"
+    ],
+    "atom": {
+        "rewriteTsconfig": true
+    }
+}
