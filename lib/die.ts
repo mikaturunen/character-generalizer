@@ -1,10 +1,10 @@
 "use strict";
 
-import Q from "q";
+import * as Q from "q";
 import { random } from "./random";
 
 export function roll(dice: Dice) {
-    const throws = [];
+    const throws: number[] = [];
 
     // NOTE if we want to throw 1d40, our random starts from 0 and yet we want to use the dice thrower as 1d40
     //      so { dice: 1, number: 40 } -> this will result into a single dice throw in th range of [0, 39], we
@@ -12,7 +12,7 @@ export function roll(dice: Dice) {
     //      zeroes if we have the need for that type if dice in the future.
     for (let i = 0; i < dice.count; i++) {
         throws.push(
-            random(1, dice[i].max)
+            random(1, dice.max)
         );
     }
 

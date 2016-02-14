@@ -1,6 +1,6 @@
 "use strict";
 
-import Q from "q";
+import * as Q from "q";
 import { roll } from "./die";
 import rules from "./rules";
 import { random } from "./random";
@@ -57,7 +57,7 @@ const randomizeLastName = () => lastNames[ random(0, lastNames.length - 1) ];
 
 const randomizeOccupation = (character: Character) => occupation[ random(0, occupation.length - 1) ];
 
-const randomizeStats = (character: Character) => {
+const randomizeStats = (character: Character): Character => {
     const statRolls = [
         roll(rules.dice.strength),
         roll(rules.dice.dexterity),
@@ -99,7 +99,7 @@ const randomizeStats = (character: Character) => {
     return character;
 };
 
-const randomizeEducation = (character: Character, depth: number = 0) => {
+const randomizeEducation = (character: Character, depth: number = 0): string => {
     if (depth >= maxRecursionDepth) {
         return character.education;
     }
@@ -112,7 +112,7 @@ const randomizeEducation = (character: Character, depth: number = 0) => {
         .sort((a: EducationLevel, b: EducationLevel) => b.value - a.value)
         .some((level: EducationLevel) => {
             if (level.value <= character.stats.education) {
-                character.education = education[result].name + ", " + education[result].levels[0].level;
+                character.education = education[educationIndex].name + ", " + education[educationIndex].levels[0].level;
                 return true;
             }
             else {
@@ -130,8 +130,8 @@ const randomizeEducation = (character: Character, depth: number = 0) => {
 export function createCharacter() {
     let baseCharacter = createBaseCharacter();
     randomizeStats(baseCharacter);
-    baseCharacter.firstNames = randomizeFirstName(baseCharacter);
-    baseCharacter.lastNames = randomizeLastName();
+    baseCharacter.firstName = randomizeFirstName(baseCharacter);
+    baseCharacter.lastName = randomizeLastName();
     baseCharacter.education = randomizeEducation(baseCharacter);
     baseCharacter.occupation = randomizeOccupation(baseCharacter);
 };

@@ -1,5 +1,5 @@
 
-import Q from "q";
+import * as Q from "q";
 
 // No type definitions in place, we cannot import it, we have to const it in as any type. This is piss,
 // and that's the reason we made a random.ts module to hold this crap inside it so the 'any' type does not

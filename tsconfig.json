@@ -16,7 +16,8 @@
         "typedefinitions/backend.d.ts",
         "lib/character.ts",
         "lib/die.ts",
-        "lib/random.ts"
+        "lib/random.ts",
+        "lib/rules.ts"
     ],
     "atom": {
         "rewriteTsconfig": true

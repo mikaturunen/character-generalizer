@@ -14,7 +14,7 @@ var path = require("path");
 
 var typeScriptSource = [
     "./typedefinitions/backend.d.ts",
-    "./backend/**/*.ts"
+    "./lib/**/*.ts"
 ];
 var typeScriptDestination = "./release/";
 
