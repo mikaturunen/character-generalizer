@@ -1,7 +1,7 @@
 "use strict";
 
 var packageInformation = require("./package.json");
-var character = require("./release/character");
+var character = require("./release/cthulhu-character-generator");
 var random = require("./release/random");
 
 var Q = require("q");

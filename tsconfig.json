@@ -14,7 +14,7 @@
     ],
     "files": [
         "typedefinitions/backend.d.ts",
-        "lib/character.ts",
+        "lib/cthulhu-character-generator.ts",
         "lib/die.ts",
         "lib/random.ts",
         "lib/rules.ts"
