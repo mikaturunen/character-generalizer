@@ -6,20 +6,27 @@ Only thing left for you to do as the Game Master is to lead the players through 
 
 Enjoy!
 
+## Working with the source code
+
+The sources can be found from the `lib` directory and are written in TypeScript. To compile the sources you need to run
+
+* `npm install`
+* `npm install -g gulp`
+* `gulp`
+
+and the sources are then compiled.
+
 ## Running the Cthulhu character generator
 
+This is mainly a module for generating general Cthulhu compatible characters but can also be used from the command line with the following commands.
+
     npm install cthulhu-character-generator
-    node --harmony node_modules/cthulhu-character-generator
+    node cthulhu-character.js
 
 ## Anything else?
-
-The whole thing is built on top of EcmaScript 6 features and requires --harmony flag to run on Node.js. Module internally relies heavily on promises.
 
 It was put together based on the information we generally used for manually doing our characters. There are few blind parsers that are used to parse the information we commonly use into a more machine edible format.
 
 ## Future improvements?
-Yes, quite few - to name a few:
 
-* Write a simple script that puts everything into a mongo database
-* Allow easy setup into heroku (database wise)
-* Build a proper UI for the project (that'll probably be a separate project and this just generates the characters for the UI)
+Yes, quite few. This will act as the general character generation module for Cthulhu based application we are working on. The application can be found [here](https://github.com/mikaturunen/cthulhu-generator-application).
