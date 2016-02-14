@@ -20,7 +20,7 @@ const createBaseCharacter = () => {
     return <Character> {
         age: 0,
         gender: randomizeGender(),
-        sexualOrientation: randomizeSexualOrientation(),
+        sexualOrientation: "",
         firstName: "",
         lastName: "",
         occupation: "",
@@ -46,7 +46,7 @@ const createBaseCharacter = () => {
 // Do we want to support other genders than male and female?
 const randomizeGender = () => random(0, 1) === rules.male ? "male" : "female";
 
-const randomizeSexualOrientation = () =>  rules.sexualOrientations[ random(0, 100) ];
+const randomizeSexualOrientation = () =>  rules.sexualOrientations()[ random(0, 100) ];
 
 const randomizeFirstName = (character: Character) => {
     const listOfFirstNames = character.gender === "male" ? firstNames.male : firstNames.female;
@@ -128,10 +128,13 @@ const randomizeEducation = (character: Character, depth: number = 0): string => 
 };
 
 export function createCharacter() {
-    let baseCharacter = createBaseCharacter();
-    randomizeStats(baseCharacter);
-    baseCharacter.firstName = randomizeFirstName(baseCharacter);
-    baseCharacter.lastName = randomizeLastName();
-    baseCharacter.education = randomizeEducation(baseCharacter);
-    baseCharacter.occupation = randomizeOccupation(baseCharacter);
+    let character = createBaseCharacter();
+    randomizeStats(character);
+    character.firstName = randomizeFirstName(character);
+    character.lastName = randomizeLastName();
+    character.education = randomizeEducation(character);
+    character.occupation = randomizeOccupation(character);
+    character.sexualOrientation = randomizeSexualOrientation();
+
+    return character;
 };

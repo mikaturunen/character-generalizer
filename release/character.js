@@ -25,7 +25,7 @@ var createBaseCharacter = function createBaseCharacter() {
     return {
         age: 0,
         gender: randomizeGender(),
-        sexualOrientation: randomizeSexualOrientation(),
+        sexualOrientation: "",
         firstName: "",
         lastName: "",
         occupation: "",
@@ -52,7 +52,7 @@ var randomizeGender = function randomizeGender() {
     return (0, _random.random)(0, 1) === _rules2.default.male ? "male" : "female";
 };
 var randomizeSexualOrientation = function randomizeSexualOrientation() {
-    return _rules2.default.sexualOrientations[(0, _random.random)(0, 100)];
+    return _rules2.default.sexualOrientations()[(0, _random.random)(0, 100)];
 };
 var randomizeFirstName = function randomizeFirstName(character) {
     var listOfFirstNames = character.gender === "male" ? firstNames.male : firstNames.female;
@@ -113,11 +113,13 @@ var randomizeEducation = function randomizeEducation(character) {
     }
 };
 function createCharacter() {
-    var baseCharacter = createBaseCharacter();
-    randomizeStats(baseCharacter);
-    baseCharacter.firstName = randomizeFirstName(baseCharacter);
-    baseCharacter.lastName = randomizeLastName();
-    baseCharacter.education = randomizeEducation(baseCharacter);
-    baseCharacter.occupation = randomizeOccupation(baseCharacter);
+    var character = createBaseCharacter();
+    randomizeStats(character);
+    character.firstName = randomizeFirstName(character);
+    character.lastName = randomizeLastName();
+    character.education = randomizeEducation(character);
+    character.occupation = randomizeOccupation(character);
+    character.sexualOrientation = randomizeSexualOrientation();
+    return character;
 }
 ;

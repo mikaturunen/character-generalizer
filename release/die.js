@@ -11,7 +11,6 @@ function roll(dice) {
     var throws = [];
 
     for (var i = 0; i < dice.count; i++) {
-        console.log(dice, i);
         throws.push((0, _random.random)(1, dice.max));
     }
     return throws.reduce(function (n, p) {

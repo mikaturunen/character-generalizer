@@ -18,5 +18,6 @@ const engine = randomJs.engines.mt19937().autoSeed();
  * @returns {number} Number between the given values.
  */
 export function random(min: number, max: number) {
-    return randomJs.integer(min, max);
+    const distribution = randomJs.integer(min, max);
+    return distribution(engine);
 }
