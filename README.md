@@ -29,4 +29,4 @@ It was put together based on the information we generally used for manually doin
 
 ## Future improvements?
 
-Yes, quite few. This will act as the general character generation module for Cthulhu based application we are working on. The application can be found [here](https://github.com/mikaturunen/cthulhu-generator-application).
+Yes, quite few. This will act as the general character generation module for Cthulhu based application we are working on. The application can be found [here](https://github.com/mikaturunen/cthulhu-generator-application).mmm
